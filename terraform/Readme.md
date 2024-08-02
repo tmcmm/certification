@@ -26,7 +26,7 @@ __Files:__<br>
 - variables.tf: This file is used to declare the input variables for your Terraform configuration. It defines the variables that will be used throughout the Terraform scripts, such as vm_name, vm_size, and storage_account_name. These variables allow you to parameterize your configuration and make it reusable. <br>
 - output-tf: This file defines the outputs of the Terraform configuration. Outputs are useful for returning information about the resources created, such as public IP addresses of the virtual machines or Kubernetes cluster details. Outputs can be queried using the terraform output command and can be used to provide information to other systems or Terraform configurations.
 - provider.tf: Configures the provider settings.
-- terraform.tfstate: Keeps track of the resource sta
+- terraform.tfstate: Keeps track of the resource state.
 
 **Install Terraform env to manage different Terraform**
 [versions](https://github.com/tfutils/tfenv)
