@@ -43,9 +43,13 @@ __List your account Subscription ID:__
 ```
 az account list -o table | grep 'subs_name' | awk '{print $ 3}'
 ```
-__Create SP for deploying terraform objects:__
+__Create Service Principal with Contributor role at subscription for deploying terraform objects:__
 ```
 az ad sp create-for-rbac --name terraform --role="Contributor" --scopes="/subscriptions/$SUBS_ID" >> sp-credentials-terraform.yaml 2>&1
+```
+__Confirm that the Service Principal was created:__
+```
+ az ad sp list --show-mine --query "[].{name: appDisplayName, id:appId, tenant:appOwnerOrganizationId}"
 ```
 __Export your service principal credentials. Replace the placeholders with appropriate values from your service principal created above:__
 ```
