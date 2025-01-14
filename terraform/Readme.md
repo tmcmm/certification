@@ -185,8 +185,8 @@ terraform output
 ![tfenv](./assets/img/terraform-output.png)
 ```
 ssh azureuser@masterpublicIP
-kubectl label node worker-1 node-role.kubernetes.io/worker=worker
-kubectl label node worker-2 node-role.kubernetes.io/worker=worker
+kubectl label node k8s-worker-1 node-role.kubernetes.io/worker=worker
+kubectl label node k8s-worker-2 node-role.kubernetes.io/worker=worker
 ```
 ![tfenv](./assets/img/get-nodes.png)
 
