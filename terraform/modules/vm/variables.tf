@@ -50,10 +50,10 @@ variable "tags" {
   default     = {}
 }
 
+# curl -4 ifconfig.io
 variable "mypublic_ip" {
   description = "My provider public IP"
   type        = string
-  default     = ""
 }
 
 variable "os_disk_image" {
