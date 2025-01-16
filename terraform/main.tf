@@ -25,9 +25,6 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes      = [var.snetaddress_space]
 }
 
-locals {
-  mypublic_ip = chomp(trimspace(shell("curl -s ifconfig.io")))
-}
 
 module "master_vm" {
   source               = "./modules/vm"
@@ -36,7 +33,6 @@ module "master_vm" {
   location             = azurerm_resource_group.main.location
   resource_group_name  = azurerm_resource_group.main.name
   subnet_id            = azurerm_subnet.subnet.id
-  mypublic_ip          = var.mypublic_ip
   admin_username       = var.admin_username
   ssh_private_key      = var.ssh_private_key
   node_role            = "master"
@@ -59,7 +55,6 @@ module "worker_vm_1" {
   location             = azurerm_resource_group.main.location
   resource_group_name  = azurerm_resource_group.main.name
   subnet_id            = azurerm_subnet.subnet.id
-  mypublic_ip          = var.mypublic_ip
   admin_username       = var.admin_username
   ssh_private_key      = var.ssh_private_key
   node_role            = "worker"
@@ -80,7 +75,6 @@ module "worker_vm_2" {
   location             = azurerm_resource_group.main.location
   resource_group_name  = azurerm_resource_group.main.name
   subnet_id            = azurerm_subnet.subnet.id
-  mypublic_ip          = var.mypublic_ip
   admin_username       = var.admin_username
   ssh_private_key      = var.ssh_private_key
   node_role            = "worker"
