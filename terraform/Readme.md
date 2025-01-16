@@ -70,6 +70,7 @@ az storage account create \
     --resource-group terraform-state-rg \
     --location your_location \
     --sku Standard_LRS
+    --allow-shared-key-access true
 
 az storage container create \
     --account-name terraformkubeadm \
