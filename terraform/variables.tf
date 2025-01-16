@@ -111,3 +111,9 @@ variable "worker_vm_count" {
   type    = number
   default = 2
 }
+
+# curl -4 ifconfig.io
+variable "mypublic_ip" {
+  description = "My provider public IP"
+  type        = string
+}
