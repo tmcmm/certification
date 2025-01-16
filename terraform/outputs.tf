@@ -5,3 +5,7 @@ output "master_public_ip" {
 output "worker_public_ips" {
   value = [module.worker_vm_1.public_ip, module.worker_vm_2.public_ip]
 }
+
+output "public_ip" {
+  value = local.public_ip
+}
