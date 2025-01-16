@@ -54,6 +54,7 @@ variable "tags" {
 variable "mypublic_ip" {
   description = "My provider public IP"
   type        = string
+  default     = ""
 }
 
 variable "os_disk_image" {
