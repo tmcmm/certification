@@ -7,5 +7,4 @@ output "worker_public_ips" {
 }
 
 output "public_ip" {
-  value = local.public_ip
-}
+  value = local.mypublic_ip
