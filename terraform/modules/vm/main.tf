@@ -24,6 +24,10 @@ resource "azurerm_network_interface" "main" {
   }
 }
 
+locals {
+  mypublic_ip = chomp(trimspace(shell("curl -s ifconfig.io")))
+}
+
 resource "azurerm_network_security_group" "nsg" {
   depends_on = [azurerm_public_ip.main, azurerm_network_interface.main]
   name                = "${var.vm_name}-nsg"
