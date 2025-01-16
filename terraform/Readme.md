@@ -1,6 +1,8 @@
 # Terraform-Azure
 Repository for a quick environment creation for Certification CKA,CKAD,CKS study.
 
+[[_TOC_]]
+
 ## What is Terraform?
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
 
@@ -88,6 +90,7 @@ export TF_VAR_client_secret=""
 export TF_VAR_subscription_id=""
 export TF_VAR_tenant_id=""
 export TF_VAR_storage_account_key=""
+export TF_VAR_mypublic_ip=$(curl -s ifconfig.io)
 ########################################################################
 ```
 **Create an sshkey value pair:**
@@ -190,8 +193,8 @@ kubectl label node k8s-worker-2 node-role.kubernetes.io/worker=worker
 ```
 ![tfenv](./assets/img/get-nodes.png)
 
-!!! Note "Note"
-        There you have a kubeadm cluster deployed on Azure ready for your exercises.
+
+> Note: There you have a kubeadm cluster deployed on Azure ready for your exercises.
 
 ### Destroy the environment
 Remember to destroy any resources you create once you are done with this tutorial. Run the destroy command and confirm with yes in your terminal.
