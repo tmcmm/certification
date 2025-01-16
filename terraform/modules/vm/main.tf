@@ -39,8 +39,8 @@ resource "azurerm_network_security_group" "nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = var.mypublic_ip
-    #source_address_prefix      = "*"
+    #source_address_prefix      = var.mypublic_ip
+    source_address_prefix      = "*"
     destination_address_prefix = azurerm_network_interface.main.private_ip_address
   }
 
