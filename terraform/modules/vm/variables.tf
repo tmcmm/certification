@@ -96,7 +96,7 @@ variable "vm_instances" {
     resource_group_name = string
     subnet_id           = string
     admin_username      = string
-    admin_password      = string
+#    admin_password      = string
     ssh_private_key     = string
     node_role           = string
     storage_account_name = string
