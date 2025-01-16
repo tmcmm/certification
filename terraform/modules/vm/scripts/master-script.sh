@@ -67,9 +67,15 @@ sudo mkdir -p /home/azureuser/.kube
 sudo cp -i /etc/kubernetes/admin.conf /home/azureuser/.kube/config
 sudo chown azureuser:azureuser /home/azureuser/.kube/config
 
-# Install Flannel CNI
+
 # Existing plugins - https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy
-sudo -u azureuser kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+
+# Install Flannel CNI
+# sudo -u azureuser kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+
+# Install Weave as Network policy and plugin
+KUBEVER="v1.30"
+sudo -u azureuser kubectl apply -f https://reweave.azurewebsites.net/k8s/$KUBEVER/net.yaml
 
 # Save the join command with the token to a file
 sudo kubeadm token create --print-join-command > /home/azureuser/joincluster.sh
