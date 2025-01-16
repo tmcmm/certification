@@ -84,11 +84,13 @@ STORAGE_ACCOUNT_KEY=$(az storage account keys list \
 **Expose these variables as variables that will be ingested by Terraform:**
 ```
 ####################################### TERRAFORM VARIABLES ############
+ export HISTCONTROL=ignorespace
+ echo "This command won't appear in history"
+ export TF_VAR_client_secret=""
+ export TF_VAR_storage_account_key=""
 export TF_VAR_client_id=""
-export TF_VAR_client_secret=""
 export TF_VAR_subscription_id=""
 export TF_VAR_tenant_id=""
-export TF_VAR_storage_account_key=""
 export TF_VAR_mypublic_ip=$(curl -s ifconfig.io)
 ########################################################################
 ```
