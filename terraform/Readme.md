@@ -1,33 +1,33 @@
 # Terraform-Azure
-Repository for a quick environment creation for Certification CKA,CKAD,CKS study.
-
+[[_TOC_]]
+### Repository for a quick environment creation for Certification CKA,CKAD,CKS study.
 
 ## What is Terraform?
-Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
-
-Configuration files describe to Terraform the components needed to run a single application or your entire datacenter. Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. As the configuration changes, Terraform is able to determine what changed and create incremental execution plans which can be applied.
-
-The infrastructure Terraform can manage includes low-level components such as compute instances, storage, and networking, as well as high-level components such as DNS entries, SaaS features, etc.
+Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It enables users to define and provision data center infrastructure using a declarative configuration language. By writing configuration files, you can describe the desired state of your infrastructure, and Terraform will manage the creation and maintenance of these resources across various cloud providers and services.
 
 The key features of Terraform are:
 __Infrastructure as Code__
-Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+- Infrastructure as Code (IaC): Utilizes HashiCorp Configuration Language (HCL) to define infrastructure in human-readable, declarative configuration files.
 
 __Execution Plans__
-Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+- Generates an execution plan that previews the changes Terraform will make before applying them, ensuring transparency and predictability.
 
 __Resource Graph__
-Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight into dependencies in their infrastructure.
+- Builds a graph of all resources, enabling efficient creation and management by understanding resource dependencies.
 
 __Change Automation__
-Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible human errors.
+- Automatically determines and applies only the necessary changes to reach the desired state, minimizing manual interventions..
 
-__Files:__<br>
-- main.tf: This is the primary Terraform configuration file where the main infrastructure components are defined. It typically includes resource declarations for creating and managing Azure resources like Virtual Machines, Resource Groups, and Network Interfaces. In this project, it also configures the Azure provider and specifies modules for creating the Kubernetes master and worker nodes.
-- variables.tf: This file is used to declare the input variables for your Terraform configuration. It defines the variables that will be used throughout the Terraform scripts, such as vm_name, vm_size, and storage_account_name. These variables allow you to parameterize your configuration and make it reusable. <br>
-- output-tf: This file defines the outputs of the Terraform configuration. Outputs are useful for returning information about the resources created, such as public IP addresses of the virtual machines or Kubernetes cluster details. Outputs can be queried using the terraform output command and can be used to provide information to other systems or Terraform configurations.
-- provider.tf: Configures the provider settings.
-- terraform.tfstate: Keeps track of the resource state.
+__Main Configuration Files:__
+
+- main.tf: Contains the primary configuration code, defining the resources and their properties. <br>
+- variables.tf: Declares input variables to parameterize configurations, enhancing reusability and flexibility. <br>
+- output-tf: Specifies output values to be displayed after applying configurations, often used to share data between modules or as informative outputs. <br>
+- provider.tf: Defines the providers (e.g., AWS, Azure, Google Cloud) that Terraform will interact with to provision resources. <br>
+- terraform.tfstate: Keeps track of the resource state. <br>
+-terraform.tfvars: Provides default values for variables, allowing for customization of configurations without altering the main code.
+
+> Note: These files collectively enable the modular and organized management of infrastructure, promoting best practices in infrastructure provisioning and maintenance.
 
 **Install Terraform env to manage different Terraform**
 [versions](https://github.com/tfutils/tfenv)
