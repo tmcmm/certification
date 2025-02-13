@@ -30,7 +30,7 @@ __Main Configuration Files:__
 
 > Note: These files collectively enable the modular and organized management of infrastructure, promoting best practices in infrastructure provisioning and maintenance.
 
-<br>
+
 **Install Terraform env to manage different Terraform**
 [versions](https://github.com/tfutils/tfenv)
 
