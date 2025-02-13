@@ -5,7 +5,8 @@
 ## What is Terraform?
 Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It enables users to define and provision data center infrastructure using a declarative configuration language. By writing configuration files, you can describe the desired state of your infrastructure, and Terraform will manage the creation and maintenance of these resources across various cloud providers and services.
 
-The key features of Terraform are:
+The key features of Terraform are: <br>
+
 __Infrastructure as Code__
 - Infrastructure as Code (IaC): Utilizes HashiCorp Configuration Language (HCL) to define infrastructure in human-readable, declarative configuration files.
 
@@ -29,6 +30,7 @@ __Main Configuration Files:__
 
 > Note: These files collectively enable the modular and organized management of infrastructure, promoting best practices in infrastructure provisioning and maintenance.
 
+<br>
 **Install Terraform env to manage different Terraform**
 [versions](https://github.com/tfutils/tfenv)
 
