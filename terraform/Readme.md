@@ -1,5 +1,5 @@
 # Terraform-Azure
-[[_TOC_]]
+
 ### Repository for a quick environment creation for Certification CKA,CKAD,CKS study.
 
 ## What is Terraform?
