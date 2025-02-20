@@ -66,8 +66,8 @@ export TF_VAR_client_secret=<service-principal-password>
 
 ### Setup a container blob storage to upload the join script so that workers can join the cluster:
 
+> Note: Storage Account names are unique across Azure so make sure you use your own as the one in example **terraformkubeadm** is already taken
 ```
-
 az group create --name terraform-state-rg \
     --location northeurope
 
@@ -75,7 +75,7 @@ az storage account create \
     --name terraformkubeadm \
     --resource-group terraform-state-rg \
     --location your_location \
-    --sku Standard_LRS
+    --sku Standard_LRS \
     --allow-shared-key-access true
 
 az storage container create \
