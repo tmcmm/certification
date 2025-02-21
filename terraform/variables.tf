@@ -64,7 +64,7 @@ variable "admin_username" {
 variable "storage_account_name" {
   description = "Name of the storage account"
   type        = string
-  default     = "terraformkubeadm"
+#  default     = "terraformkubeadm"
 }
 
 variable "storage_account_key" {
