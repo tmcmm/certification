@@ -44,24 +44,22 @@ tfenv install latest
 ## PRE-REQUISITES:
 __List your account Subscription ID:__
 ```
-az account list -o table | grep 'subs_name' | awk '{print $ 3}'
+az account list -o table | grep 'YOUR_SUBSCRIPTION_NAME' | awk '{print $ 3}'
 ```
 __List your tenant:__
 ```
-az account show --subscription "subs_name" --query tenantId
+az account show --subscription "YOUR_SUBSCRIPTION_NAME" --query tenantId
 ```
 __Create Service Principal with Contributor role at subscription for deploying terraform objects:__
+
 ```
+SUBS_ID=$(az account show --query id --output tsv)
 az ad sp create-for-rbac --name terraform --role="Contributor" --scopes="/subscriptions/$SUBS_ID" >> sp-credentials-terraform.yaml 2>&1
+(The service principal will be created and the output will be redirected to sp-credentials-terraform.yaml file locally so then you can export the variables of Service Principal).
 ```
 __Confirm that the Service Principal was created:__
 ```
  az ad sp list --show-mine --query "[].{name: appDisplayName, id:appId, tenant:appOwnerOrganizationId}"
-```
-__Export your service principal credentials. Replace the placeholders with appropriate values from your service principal created above:__
-```
-export TF_VAR_client_id=<service-principal-appid> 
-export TF_VAR_client_secret=<service-principal-password>
 ```
 
 ### Setup a container blob storage to upload the join script so that workers can join the cluster:
@@ -99,6 +97,7 @@ export TF_VAR_client_id=""
 export TF_VAR_subscription_id=""
 export TF_VAR_tenant_id=""
 export TF_VAR_mypublic_ip=$(curl -s ifconfig.io)
+export TF_VAR_storage_account_name=""
 ########################################################################
 ```
 **Create an sshkey value pair:**
