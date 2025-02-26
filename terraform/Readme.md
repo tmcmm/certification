@@ -39,6 +39,7 @@ __Main Configuration Files:__
 # If you use a .terraform-version file, tfenv install (no argument) will install the version written in it.
 
 tfenv install latest
+tfenv use latest
 ```
 ![tfenv](./assets/img/tf-env.png)
 ## PRE-REQUISITES:
