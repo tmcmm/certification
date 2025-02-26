@@ -98,6 +98,7 @@ export TF_VAR_subscription_id=""
 export TF_VAR_tenant_id=""
 export TF_VAR_mypublic_ip=$(curl -s ifconfig.io)
 export TF_VAR_storage_account_name=""
+export TF_VAR_container_name=""
 ########################################################################
 ```
 **Create an sshkey value pair:**
