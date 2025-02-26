@@ -76,7 +76,7 @@ variable "storage_account_key" {
 variable "container_name" {
   description = "Name of the blob container"
   type        = string
-  default     = "kubeadm"
+  #default     = "kubeadm"
 }
 
 variable "tags" {
